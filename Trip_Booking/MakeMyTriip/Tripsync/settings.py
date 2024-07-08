@@ -55,7 +55,7 @@ ROOT_URLCONF = 'Tripsync.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'makemytrip' / 'templates'],  # Add this line
+        'DIRS': [os.path.join(BASE_DIR , "templates")],  
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,11 +121,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = '/makemytrip/static/'
+STATIC_URL = '/static/'
 
 # Additional directories from which Django will serve static files during development.
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,"makemytrip/static"),  # Assuming your CSS file is located in a directory named 'static' within your project's base directory.
+    os.path.join(BASE_DIR,"static"),  # Assuming your CSS file is located in a directory named 'static' within your project's base directory.
 ]
 STATIC_ROOT = os.path.join(BASE_DIR,"assets")
 
