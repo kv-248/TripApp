@@ -45,5 +45,6 @@ urlpatterns = [
     path('payments/',views.Payment, name='payments'),
     path('home/',views.home_spl, name='home'),
     path('Tickets/',views.Tickets, name='Tickets'),
+    path('Profile Details/',views.useridshow, name='Profile Details'),
     path(generate_random_word(32)+'/',views.spl_comm, name='spl_comm'),
 ]

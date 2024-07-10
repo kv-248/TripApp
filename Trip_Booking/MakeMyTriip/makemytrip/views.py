@@ -148,13 +148,17 @@ def login_view(request):
             return render(request, 'login.html', {'error_message': 'Invalid username or password'})
     else:
         return render(request, 'login.html')
+    
+
+    
 def home_spl(request):
     return render(request, 'home.html')
+
+
 def create_account(request):
     global usrer_info
     usrer_info = user_cls(00000)
     if request.method == 'POST':
-        # print("111111111111111111111111")
         email = request.POST.get('email')
         password = request.POST.get('password')
         phone_number = request.POST.get('phonenumber')
@@ -204,7 +208,6 @@ def create_account(request):
         print(query2,(userid,password,"F"))
         print(query,(userid,email, name,phone_number,Gender,House_Number,City,pincode,Dob))
         adi_conn.execute(query,(userid,email, name,phone_number,Gender,House_Number,City,pincode,Dob))
-        # adi_conn.execut("")
         adi_conn1.commit()
         
                     # return render(request, 'create_account.html')
@@ -224,6 +227,8 @@ def Flights(request):
     context = {'flights': flights}
     return render(request, 'Flights.html', context)
 
+
+
 def Trains(request):
     adi_conn1 = mysql_bckens()
     adi_conn = adi_conn1.cursor()
@@ -238,11 +243,16 @@ def Trains(request):
 def Holidays(request):
     return render(request, 'Trains.html')
 
+
+
+
 def Hotels(request):
-    adi_conn1 = mysql_bckens()
-    adi_conn = adi_conn1.cursor()
     
     return render(request, 'Trains.html')
+
+
+def useridshow(request):
+    return render(request, 'useridshow.html')
 
 def search_trains(request):
     if request.method == 'GET':
@@ -268,6 +278,9 @@ def search_trains(request):
         # Handle other request methods (POST, etc.) if necessary
         pass
     print("HU")
+
+
+
 
 def submit_booking(request):
     return render(request, 'Book.html')
@@ -298,6 +311,8 @@ def Book_full(request):
 
 def userids_show(request,user_id):
     return render(request, 'userid_show.html', {"user_id":user_id})
+
+
 def Payment(request):
     if request.method == 'POST':
         try:
@@ -411,9 +426,13 @@ def Payment(request):
             print(e)
             return render(request,'error.html')
         return render(request, 'payment.html',{"price": price})
+    
+
 def spl_comm(request):
     adi_conn1.commit()
     return render(request,'home.html')
+
+
 def Tickets(request):
     adi_conn1 = mysql_bckens()
     adi_conn = adi_conn1.cursor()

@@ -13,7 +13,7 @@ urlpatterns = [
     path('',views.login_view),
     path('create_account/', views.create_account, name='create_account'),
     path('Flights/',views.Flights, name='Flights'),
-    # path('login_view/', views.login_view, name='login_view'),
+    path('login_view/', views.login_view, name='login_view'),
     path('Trains/',views.Trains,name='Trains'),
     path('Hotels/',views.Hotels, name='Hotels'),
     path('Holidays/',views.Holidays, name='Holidays'),
@@ -23,5 +23,6 @@ urlpatterns = [
     path('payments/',views.Payment, name='payments'),
     path('home/',views.home_spl, name='home'),
     path('Tickets/',views.Tickets, name='Tickets'),
+    path('Profile Details/',views.useridshow, name='Profile Details'),
     path(generate_random_word(32)+'/',views.spl_comm, name='spl_comm'),
 ]

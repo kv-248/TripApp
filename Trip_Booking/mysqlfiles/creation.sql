@@ -61,7 +61,7 @@ CREATE TABLE Loungue(
 );
 
 create table Transport(
-    -- this is a disjoint set @Adi Bhai coding
+    -- this is a disjoint set 
     Transport_id INT PRIMARY KEY,
     Start_Loc VARCHAR(50) NOT NULL,
     Destn_Loc VARCHAR(50) NOT NULL ,
